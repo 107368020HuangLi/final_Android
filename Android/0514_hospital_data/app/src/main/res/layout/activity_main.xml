@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#ffe4e1">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text="運用機器學習於結構式病歷"
+        android:textColor="#227700"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text="以預測骨科病患住院日數"
+        android:textColor="#227700"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/Age_Text"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:gravity="right"
+        android:text="病患年齡:"
+        android:textColor="#008888"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+    <EditText
+        android:id="@+id/Age"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入年齡(ex:45)(歲)"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/Age_Text"
+        app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+    <TextView
+        android:id="@+id/BMI_Text"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:gravity="right"
+        android:text="病患BMI值:"
+        android:textColor="#008888"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Age_Text" />
+
+    <EditText
+        android:id="@+id/BMI"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入BMI值(ex:23.56)(kg/m^2)"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/BMI_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Age" />
+
+    <TextView
+        android:id="@+id/Temperature_Text"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:gravity="right"
+        android:text="病患體溫:"
+        android:textColor="#008888"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BMI_Text" />
+
+    <EditText
+        android:id="@+id/Temperature"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入體溫值(ex:36.5)(度)"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/Temperature_Text"
+        app:layout_constraintTop_toBottomOf="@+id/BMI" />
+
+    <TextView
+        android:id="@+id/Pulse_Text"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:gravity="right"
+        android:text="病患脈搏:"
+        android:textColor="#008888"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Temperature_Text" />
+
+    <EditText
+        android:id="@+id/Pulse"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入脈搏值(ex:90)(次/分)"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/Pulse_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Temperature" />
+
+    <TextView
+        android:id="@+id/Respiration_Text"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:gravity="right"
+        android:text="病患呼吸:"
+        android:textColor="#008888"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Pulse_Text" />
+
+    <EditText
+        android:id="@+id/Respiration"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入呼吸頻率值(ex:18)(次/分)"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/Respiration_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Pulse" />
+
+    <TextView
+        android:id="@+id/WBC_Text"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:gravity="right"
+        android:text="病患白血球數:"
+        android:textColor="#008888"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Age"
+        app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+    <EditText
+        android:id="@+id/Wbc"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入WBC值(ex:13.5)(10^3/uL)"
+        android:textSize="16sp"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toEndOf="@+id/WBC_Text"
+        app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+    <TextView
+        android:id="@+id/Hemoglobin_Text"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:gravity="right"
+        android:text="病患血色素檢查:"
+        android:textColor="#008888"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/BMI"
+        app:layout_constraintTop_toBottomOf="@+id/WBC_Text" />
+
+    <EditText
+        android:id="@+id/Hemoglobin"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入HEMOGLOBIN值(ex:12.1)(g/dL)"
+        android:textSize="16sp"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toEndOf="@+id/Hemoglobin_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Wbc" />
+
+    <TextView
+        android:id="@+id/HCT_Text"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:gravity="right"
+        android:text="病患血球比容值:"
+        android:textColor="#008888"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Temperature"
+        app:layout_constraintTop_toBottomOf="@+id/Hemoglobin_Text" />
+
+    <EditText
+        android:id="@+id/Hct"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入HCT值(ex:40.1)(%)"
+        android:textSize="16sp"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toEndOf="@+id/HCT_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Hemoglobin" />
+
+    <TextView
+        android:id="@+id/Platelets_Text"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:gravity="right"
+        android:text="病患血小板數:"
+        android:textColor="#008888"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Pulse"
+        app:layout_constraintTop_toBottomOf="@+id/HCT_Text" />
+
+    <EditText
+        android:id="@+id/Platelets"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入Platelets值(ex:273)(10^3/uL)"
+        android:textSize="16sp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toEndOf="@+id/Platelets_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Hct" />
+
+    <TextView
+        android:id="@+id/BUN_Text"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:gravity="right"
+        android:text="病患血液尿素氮:"
+        android:textColor="#008888"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Respiration"
+        app:layout_constraintTop_toBottomOf="@+id/Platelets_Text" />
+
+    <EditText
+        android:id="@+id/Bun"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入Bun值(ex:13.9)(mg/dL)"
+        android:textSize="16sp"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toEndOf="@+id/BUN_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Platelets" />
+
+    <TextView
+        android:id="@+id/Creatinine_Text"
+        android:layout_width="138dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="8dp"
+        android:gravity="right"
+        android:text="病患肌酐值:"
+        android:textColor="#008888"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Respiration" />
+
+    <EditText
+        android:id="@+id/Creatinine"
+        android:layout_width="253dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入Creatinine值(ex:1.1)(mg/dL)"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toEndOf="@+id/Creatinine_Text"
+        app:layout_constraintTop_toBottomOf="@+id/BUN_Text" />
+
+    <TextView
+        android:id="@+id/OP_CODE_Text"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="12dp"
+        android:gravity="right"
+        android:text="病患手術代碼:"
+        android:textColor="#EE7700"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WHERE_Text" />
+
+    <Spinner
+        android:id="@+id/Op_code"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/OP_CODE_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Where" />
+
+    <TextView
+        android:id="@+id/occupation_Text"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="24dp"
+        android:gravity="right"
+        android:text="病患職業別:"
+        android:textColor="#EE7700"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Creatinine_Text" />
+
+    <Spinner
+        android:id="@+id/Occupation"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/occupation_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Creatinine" />
+
+    <TextView
+        android:id="@+id/WHERE_Text"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="12dp"
+        android:gravity="right"
+        android:text="病患骨折位置:"
+        android:textColor="#EE7700"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/occupation_Text" />
+
+    <Spinner
+        android:id="@+id/Where"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/WHERE_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Occupation" />
+
+    <TextView
+        android:id="@+id/PRE_DIAG_Text"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="12dp"
+        android:gravity="right"
+        android:text="手術前診斷:"
+        android:textColor="#EE7700"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OP_CODE_Text" />
+
+    <Spinner
+        android:id="@+id/Pre_diag"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/PRE_DIAG_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Op_code" />
+
+    <TextView
+        android:id="@+id/POST_DIAG_Text"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="16dp"
+        android:gravity="right"
+        android:text="手術後診斷:"
+        android:textColor="#EE7700"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PRE_DIAG_Text" />
+
+    <Spinner
+        android:id="@+id/Post_diag"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/POST_DIAG_Text"
+        app:layout_constraintTop_toBottomOf="@+id/Pre_diag" />
+
+    <Button
+        android:id="@+id/inferButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="開始預測"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Post_diag" />
+
+    <TextView
+        android:id="@+id/outputNumberA"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="right"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toEndOf="@+id/Day_A_Text"
+        app:layout_constraintTop_toBottomOf="@+id/inferButton" />
+
+    <TextView
+        android:id="@+id/outputNumberB"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="right"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toEndOf="@+id/Day_B_Text"
+        app:layout_constraintTop_toBottomOf="@+id/outputNumberA" />
+
+    <TextView
+        android:id="@+id/outputNumberC"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="right"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toEndOf="@+id/Day_D_Text"
+        app:layout_constraintTop_toBottomOf="@+id/outputNumberD" />
+
+    <TextView
+        android:id="@+id/outputNumberD"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="right"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toEndOf="@+id/Day_C_Text"
+        app:layout_constraintTop_toBottomOf="@+id/outputNumberB" />
+
+    <TextView
+        android:id="@+id/Day_A_Text"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="12dp"
+        android:gravity="right"
+        android:text="預測建議住院(1~3)天機率為:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inferButton" />
+
+    <TextView
+        android:id="@+id/Day_B_Text"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="12dp"
+        android:gravity="right"
+        android:text="預測建議住院(4~7)天機率為:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Day_A_Text" />
+
+    <TextView
+        android:id="@+id/Day_C_Text"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="8dp"
+        android:gravity="right"
+        android:text="預測建議住院(8~14)天機率為:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Day_B_Text" />
+
+    <TextView
+        android:id="@+id/Day_D_Text"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="8dp"
+        android:gravity="right"
+        android:text="預測建議住院(15~30)天機率為:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Day_C_Text" />
+
+    <TextView
+        android:id="@+id/copywright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="本設備為研究論文所用。指導教授:段裘慶教授,研究生:黃立。@國立台北科技大學網路應用實驗室"
+        android:textColor="#888800"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>
